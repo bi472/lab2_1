@@ -1,6 +1,5 @@
 % rebase('layout.tpl', title=title, year=year)
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+<h3>This site</h3>
 
-<p>Use this area to provide additional information.</p>
+<p>This site was created by two students of the C822 group as a lab work.</p>
