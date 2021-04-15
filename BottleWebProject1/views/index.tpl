@@ -1,11 +1,13 @@
 % rebase('layout.tpl', title='Home Page', year=year)
 
+
 <div class="jumbotron">
 	<img src="static\images\motosport-logo.jpg">
 	<p></p>
     <p class="lead">Motorsport, motorsports or motor sport is a global term used to encompass the group of competitive sporting events which primarily involve the use of motorised vehicles, whether for racing or non-racing competition. The terminology can also be used to describe forms of competition of two-wheeled motorised vehicles under the banner of motorcycle racing, and includes off-road racing such as motocross.</p>
     <p><a href="https://en.wikipedia.org/wiki/Motorsport" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
+
 
 <div class="row">
     <div class="col-md-4">
