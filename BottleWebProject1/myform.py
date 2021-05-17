@@ -1,6 +1,7 @@
 from bottle import post, request
 from re import *
 import pdb
+import json
 
 @post('/home', method='post')
 def my_form():
@@ -11,13 +12,15 @@ def my_form():
     is_valid = pattern.match(mail)
     if not (mail == '' or quest == ''):
         if is_valid:
-            questions[mail] = quest
-            pdb.set_trace()
+            questions[mail].append = quest
             return "Спасибо! Мы ответим вам по адресу %s" % mail
         else:
             return "Пожалуйста, введите правильный email. Иначе мы не сможем с вами связаться и не сможем сделать наш сайт чуточку лучше. :)"
     else:
         return "Пожалуйста, введите все поля. Похоже некоторые вы забыли ..."
+    with open('data.txt', 'w') as outfile:
+        json.dump(data, outfile)
+
     
 
     
