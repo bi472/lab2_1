@@ -33,3 +33,23 @@ def about():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/feedback')
+@view('Feedback')
+def feedback():
+    return dict(
+        title='Create review',
+        message='Fill all fields :',
+        year=datetime.now().year
+    )
+
+@route('/feedback_look')
+@view('Feedback_look')
+def feedback_look():
+    return dict(
+        title='All reviews',
+        message='',
+        year=datetime.now().year
+    )
+
+
