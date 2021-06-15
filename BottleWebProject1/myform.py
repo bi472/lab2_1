@@ -2,6 +2,7 @@ from bottle import post, request
 from re import *
 import pdb
 import json
+import myform_mail
 questions = {}
 
 @post('/home', method='post')
@@ -11,7 +12,7 @@ def my_form():
     pattern = compile('(^|\s)[-a-z0-9_.]+@([-a-z0-9]+\.)+[a-z]{2,6}(\s|$)')
     is_valid = pattern.match(mail)
     if not (mail == '' or quest == ''):
-        if is_valid:
+        if (myform_mail.test_regular(mail)):
             if (mail in questions):
                 questions[mail].append = quest
             else:
