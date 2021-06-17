@@ -35,12 +35,6 @@ It was in the role of a Renault driver that the Spaniard became one of the leade
 We have a very competitive squad of drivers, it will be a challenge. Am I as good as they are? I'm better."</p>
         <p><a class="btn btn-default" href="https://ru.motorsport.com/f1/news/alonso-ya-luchshe-khemiltona-fettelya-i-ferstappena/5884212/">Learn more &raquo;</a></p>
         <h3> Ask a Question </h3>
-<form action="/home" method="post">
-        <p><textarea rows="2" cols="50" name="QUEST" placeholder="Your question"></textarea></p> 
-        <p><input type="text" size="50" name="ADRESS" placeholder="Your email"></p>
-        <p><input type="submit" value="Send" class="btn btn-default"></p>
-
-</form>
 
     </div>
 </div>

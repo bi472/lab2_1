@@ -3,28 +3,42 @@ from re import *
 import pdb
 import json
 import myform_mail
+from datetime import date
+import test
 questions = {}
 
-@post('/home', method='post')
-def my_form():
-    mail = request.forms.get('ADRESS')
-    quest = request.forms.get('QUEST')
-    pattern = compile('(^|\s)[-a-z0-9_.]+@([-a-z0-9]+\.)+[a-z]{2,6}(\s|$)')
-    is_valid = pattern.match(mail)
-    if not (mail == '' or quest == ''):
-        if (myform_mail.test_regular(mail)):
-            if (mail in questions):
-                questions[mail].append = quest
-            else:
-                questions[mail] = quest
-            with open('data.txt', 'w') as outfile:
-                json.dump(questions, outfile)
-            return "Спасибо! Мы ответим вам по адресу %s" % mail
-        else:
-            return "Пожалуйста, введите правильный email. Иначе мы не сможем с вами связаться и не сможем сделать наш сайт чуточку лучше. :)"
-    else:
-        return "Пожалуйста, введите все поля. Похоже некоторые вы забыли ..."
+def create_review(rev): 
+    reviews = []
+    try:
+        with open('reviews.json') as f: # Получение данных из json файла
+            file_content = f.read()
+            reviews = json.loads(file_content)
+    except Exception:
+        reviews = []
+    reviews.append(rev) 
+    file = open("reviews.json", 'w') # Запись в файл
+    file.write(json.dumps(reviews))
+    file.close()
 
+@post('/home', method='post')
+def prepare_review():
+    text = request.forms.get('FEEDBACK')
+    author = request.forms.get('AUTHOR')
+    if test.check_mail(email):
+        return "Введите email правильно."
+    if test.check_phone(phone):
+        return "Введите номер телефона правильно."
+    if not text:
+        return "Пожалуйста, введите отзыв."
+    review = {
+    "feedback": text,
+    "email": email,
+    "phone": phone,
+    "author": author,
+    "date": date.today().strftime('%Y/%m/%d')
+    }
+    create_review(review)
+    return "Your review was created"
     
 
     
