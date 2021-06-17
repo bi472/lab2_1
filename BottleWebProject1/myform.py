@@ -7,6 +7,13 @@ from datetime import date
 import test
 questions = {}
 
+def get_all_reviews():
+    reviews = []
+    with open('reviews.json') as f: # Получение данных из json файла
+        file_content = f.read()
+        reviews = json.loads(file_content)
+    return reviews
+
 def create_review(rev): 
     reviews = []
     try:

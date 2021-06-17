@@ -2,7 +2,7 @@ import unittest
 import test
 
 list_mail_f = ["m@mailru", "cal.ru", "mor@"]
-list_mail_t = ["1@mail.ru", "123p@mail.ru", "test@gmail.com"]
+list_mail_t = ["1@mail.ru", "123p@mail.ru", "123@gmail.com"]
 
 list_phone_f = ["4353453454354", "35234234234", "+7 234 555 11 11"]
 list_phone_t = ["+8 (999) 999-23-23", "+9 (999) 999-99-99", "+7 (777) 777-77-77"]

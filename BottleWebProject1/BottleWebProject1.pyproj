@@ -34,14 +34,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="API.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="app.py" />
     <Compile Include="test.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="test_unittest.py">
+    <Compile Include="test_1.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="myform.py">
