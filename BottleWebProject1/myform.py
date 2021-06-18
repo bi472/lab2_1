@@ -30,10 +30,12 @@ def create_review(rev):
 @post('/home', method='post')
 def prepare_review():
     text = request.forms.get('FEEDBACK')
+    email = request.forms.get('EMAIL')
+    phone = request.forms.get('PHONE')
     author = request.forms.get('AUTHOR')
-    if test.check_mail(email):
+    if not (test.check_mail(email)):
         return "Введите email правильно."
-    if test.check_phone(phone):
+    if not (test.check_phone(phone)):
         return "Введите номер телефона правильно."
     if not text:
         return "Пожалуйста, введите отзыв."
